@@ -31,7 +31,7 @@
     <a href="https://github.com/Gtallant/tabletop-manager"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Gtallant/tabletop-manager">View Demo</a>
+    <a href="https://tabletop-manager.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/Gtallant/tabletop-manager/issues">Report Bug</a>
     ·
@@ -109,8 +109,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/Gtallant/tabletop-manager.git
    ```
