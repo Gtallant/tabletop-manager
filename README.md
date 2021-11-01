@@ -71,7 +71,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Tabletop Manager][product-screenshot]](https://example.com)
+[![Tabletop Manager][product-screenshot]](https://tabletop-manager.vercel.app/)
 
 I run a tabletop RPG campaign for my family hosted over discord, and I wanted a way to synchronously play an mp3 file on everyone's devices. After trying out a few tools that didn't work for various reasons, I decided to just write a simple webapp to do it via websockets.
 
@@ -207,4 +207,4 @@ Project Link: [https://github.com/Gtallant/tabletop-manager](https://github.com/
 [license-url]: https://github.com/Gtallant/tabletop-manager/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/griffintallant/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/screenshot.png
