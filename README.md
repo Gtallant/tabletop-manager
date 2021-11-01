@@ -138,11 +138,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Synchronously play an audio file across multiple clients
-- [] Display character info
-    - [] Change layout based on if we're in/out of combat
-- [] Display Stat blocks for monsters/NPCs
-    - [] Parse stats from an image of a stat block
+- [ ] Synchronously play an audio file across multiple clients
+- [ ] Display character info
+    - [ ] Change layout based on if we're in/out of combat
+- [ ] Display Stat blocks for monsters/NPCs
+    - [ ] Parse stats from an image of a stat block
 
 See the [open issues](https://github.com/Gtallant/tabletop-manager/issues) for a full list of proposed features (and known issues).
 
