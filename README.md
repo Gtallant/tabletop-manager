@@ -26,7 +26,7 @@
 <h3 align="center">Tabletop Manager</h3>
 
   <p align="center">
-    project_description
+    A simple portal for Tabletop RPGs
     <br />
     <a href="https://github.com/Gtallant/tabletop-manager"><strong>Explore the docs »</strong></a>
     <br />
@@ -58,9 +58,9 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <!-- <li><a href="#usage">Usage</a></li> -->
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <!-- <li><a href="#contributing">Contributing</a></li> -->
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -96,12 +96,10 @@ I also want it to be generic enough that if I ever want to add more features, I 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -182,13 +180,18 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - griffin.tallant@gmail.com
+Your Name - [Linkedin](https://www.linkedin.com/in/griffintallant/) - griffin.tallant@gmail.com
 
 Project Link: [https://github.com/Gtallant/tabletop-manager](https://github.com/Gtallant/tabletop-manager)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
