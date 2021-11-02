@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Typography from '@mui/material/Typography';
-import Layout from '../components/layout/layout'
+import Layout from '../components/layout/layout';
+import Login from '../components/login/login';
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
@@ -14,13 +15,11 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout>
-        <Typography variant="h1">
+        <Typography variant="h1" sx={{ textAlign: 'center' }}>
           Welcome adventurer!
         </Typography>
 
-        <Typography variant="h3">
-          Are you a ...
-        </Typography>
+        <Login />
 
       </Layout>
     </>
