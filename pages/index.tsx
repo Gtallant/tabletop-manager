@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <Layout>
         <Typography variant="h1">
-          Welcome mighty adventurer!
+          Welcome adventurer!
         </Typography>
 
         <Typography variant="h3">
