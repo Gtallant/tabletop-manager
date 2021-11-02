@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Fruktur&family=Lato:wght@400;700&family=Staatliches&display=swap');
-html,
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Caveat+Brush&family=Irish+Grover&family=Lato:wght@400;700&display=swap');html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: #30015C;
-    background: -webkit-linear-gradient(top right, #3f7300, #064730);
-    background: -moz-linear-gradient(top right, #3f7300, #064730);
-    background: linear-gradient(to bottom left, #3f7300, #064730);
+    background: -webkit-linear-gradient(top right, #30015C, #011A31);
+    background: -moz-linear-gradient(top right, #30015C, #011A31);
+    background: linear-gradient(to bottom left, #30015C, #011A31);
     min-height: 100vh;
 }
 
