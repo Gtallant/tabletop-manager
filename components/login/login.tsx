@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setUserType } from './login.reducer';
+import Link from 'next/link';
 
 const buttonStyles = {
   fontSize: '1.5rem',
@@ -20,19 +21,22 @@ export default function Login() {
           Pick Your Poison
         </Typography>
         <ButtonGroup size="large" aria-label="large button group" sx={{ my: 4 }}>
-          <Button
-            sx={{ ...buttonStyles, pr: 1 }}
-            variant="outlined"
-            size="large"
-            onClick={() => dispatch(setUserType('PLAYER'))}>
-              Player
+          <Link href="/dm-portal" passHref>
+            <Button
+              component="a"
+              sx={{ ...buttonStyles, pr: 1 }}
+              variant="outlined"
+              size="large"
+              onClick={() => dispatch(setUserType('DM'))}>
+                DM
             </Button>
+          </Link>
             <Button
             sx={{ ...buttonStyles }}
             variant="outlined"
             size="large"
-            onClick={() => dispatch(setUserType('DM'))}>
-              DM
+            onClick={() => dispatch(setUserType('PLAYER'))}>
+              Player
             </Button>
         </ButtonGroup>
     </Box>

@@ -5,9 +5,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: #30015C;
-    background: -webkit-linear-gradient(top right, #30015C, #011A31);
-    background: -moz-linear-gradient(top right, #30015C, #011A31);
-    background: linear-gradient(to bottom left, #30015C, #011A31);
+    background-image: url(/gradient.svg);
+    background-size: 100%;
     min-height: 100vh;
 }
 

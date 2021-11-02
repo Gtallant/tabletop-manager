@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
       <Layout>
         <Typography variant="h1" sx={{ textAlign: 'center' }}>
-          {greeting(displayName)}
+          Welcome Adventurer!
         </Typography>
 
         {userType === 'NONE' && <Login />}
