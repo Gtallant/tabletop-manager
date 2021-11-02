@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
       <Layout>
         <Typography variant="h1" sx={{ textAlign: 'center' }}>
-          Welcome adventurer!
+          Welcome Adventurer!
         </Typography>
 
         <Login />

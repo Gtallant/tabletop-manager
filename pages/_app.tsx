@@ -26,18 +26,20 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontFamily: 'Nosifer',
+      fontFamily: 'Fruktur',
       fontSize: '3rem',
     },
     h2: {
-      fontFamily: 'Nosifer',
+      fontFamily: 'Fruktur',
       fontSize: '2rem',
     },
     h3: {
       fontFamily: 'Staatliches',
+      fontSize: '1.8rem',
     },
     h4: {
       fontFamily: 'Staatliches',
+      fontSize: '1.5rem',
     },
     h5: {
       fontFamily: 'Caveat Brush',

@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import React from 'react';
 
 const buttonStyles = {
-  fontSize: 24,
+  fontSize: 32,
   fontFamily: 'Caveat Brush',
 };
 
@@ -15,8 +15,8 @@ export default function Login() {
       <Typography variant="h3">
           Pick Your Poison
         </Typography>
-        <ButtonGroup size="large" aria-label="large button group">
-          <Button sx={buttonStyles} variant="text" size="large">Player</Button>
+        <ButtonGroup size="large" aria-label="large button group" sx={{ my: 4 }}>
+          <Button sx={{ ...buttonStyles, mr: 2 }} variant="text" size="large">Player</Button>
           <Button sx={buttonStyles} variant="text" size="large">DM</Button>
         </ButtonGroup>
     </Box>
