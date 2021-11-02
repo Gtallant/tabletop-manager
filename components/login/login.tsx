@@ -24,14 +24,14 @@ export default function Login() {
             sx={{ ...buttonStyles, pr: 1 }}
             variant="outlined"
             size="large"
-            onClick={() => dispatch(setUserType('player'))}>
+            onClick={() => dispatch(setUserType('PLAYER'))}>
               Player
             </Button>
             <Button
             sx={{ ...buttonStyles }}
             variant="outlined"
             size="large"
-            onClick={() => dispatch(setUserType('dm'))}>
+            onClick={() => dispatch(setUserType('DM'))}>
               DM
             </Button>
         </ButtonGroup>

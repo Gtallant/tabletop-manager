@@ -3,9 +3,14 @@ import Head from 'next/head'
 import Typography from '@mui/material/Typography';
 import Layout from '../components/layout/layout';
 import Login from '../components/login/login';
-import styles from '../styles/Home.module.scss'
+import { useSelector } from 'react-redux';
+;import { RootState } from '../lib/store';
+import { userConfig } from '../components/login/constants';
 
 const Home: NextPage = () => {
+  const userType = useSelector((state: RootState) => state.login.userType);
+  const userTypeConfig = userConfig[userType];
+  const { displayName, greeting } = userTypeConfig;
   return (
     <>
       <Head>
@@ -16,10 +21,10 @@ const Home: NextPage = () => {
 
       <Layout>
         <Typography variant="h1" sx={{ textAlign: 'center' }}>
-          Welcome Adventurer!
+          {greeting(displayName)}
         </Typography>
 
-        <Login />
+        {userType === 'NONE' && <Login />}
 
       </Layout>
     </>
