@@ -71,7 +71,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Tabletop Manager][product-screenshot]](https://example.com)
+[![Tabletop Manager][product-screenshot]](https://tabletop-manager.vercel.app/)
 
 I run a tabletop RPG campaign for my family hosted over discord, and I wanted a way to synchronously play an mp3 file on everyone's devices. After trying out a few tools that didn't work for various reasons, I decided to just write a simple webapp to do it via websockets.
 
