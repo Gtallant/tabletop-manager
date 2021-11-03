@@ -85,8 +85,10 @@ I also want it to be generic enough that if I ever want to add more features, I 
 
 * [Next.js](https://nextjs.org/)
 * [React.js](https://reactjs.org/)
-* [MUI](https://mui.com/)
 * [Typescript](https://www.typescriptlang.org/)
+* [MUI](https://mui.com/)
+* [Redux Toolkit](https://redux-toolkit.js.org/)
+* [Airtable](https://airtable.com/)
 * [Socket.io](https://socket.io/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -207,4 +209,4 @@ Project Link: [https://github.com/Gtallant/tabletop-manager](https://github.com/
 [license-url]: https://github.com/Gtallant/tabletop-manager/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/griffintallant/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/screenshot.png
