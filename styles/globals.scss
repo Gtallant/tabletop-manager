@@ -6,7 +6,8 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: #30015C;
     background-image: url(/gradient.svg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: top;
     min-height: 100vh;
 }
 

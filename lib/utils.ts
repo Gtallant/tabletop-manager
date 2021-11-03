@@ -1,7 +1,5 @@
-import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
-import * as mm from 'music-metadata';
 
 
 const base = require('airtable').base('app8ATwuKjfAqLgYg');
