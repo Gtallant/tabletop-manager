@@ -1,15 +1,17 @@
 import type { GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult, NextPage } from 'next'
 import Head from 'next/head';
+import Typography from '@mui/material/Typography';
+import Layout from '../components/layout/layout';
+import Login from '../components/login/login';
 import { setUserType } from '../components/login/login.reducer';
 import { useSelector, useDispatch } from 'react-redux';
-;import { RootState } from './_app';
+;import { RootState } from '../pages/_app';
 import { userConfig } from '../components/login/constants';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { authRedirect } from '../lib/utils';
-import Home from '../components/pages/home/Home';
 
-const HomePage = ({ userTypeCookie }: {
+const Auth = ({ userTypeCookie }: {
   userTypeCookie: string
 }
 ) => {
@@ -21,6 +23,11 @@ const HomePage = ({ userTypeCookie }: {
       dispatch(setUserType(userTypeCookie));
     }
   }, [userTypeCookie]);
+  if(userType === 'DM') {
+    router.replace('/dm-portal');
+  }
+  const userTypeConfig = userConfig[userType];
+  const { displayName, greeting } = userTypeConfig;
   return (
     <>
       <Head>
@@ -28,21 +35,21 @@ const HomePage = ({ userTypeCookie }: {
         <meta name="description" content="Welcome to your favorite TTRPG portal" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Home userType={userType} />
+
+      <Layout>
+        <Typography variant="h1" sx={{ textAlign: 'center' }}>
+          Welcome Adventurer!
+        </Typography>
+
+        {userType === 'NONE' && <Login />}
+
+      </Layout>
     </>
   )
 }
 
 export const getServerSideProps: GetServerSideProps<any> = async (context) => {
- const authData = authRedirect(context.req,context. res, '/');
- if (authData.isRedirect) {
-   return {
-     redirect: authData.redirect,
-   }
- }
-  return {
-    props: authData.props
-  }
+  return authRedirect(context.req,context. res, '/');
 }
 
-export default HomePage;
+export default Auth;

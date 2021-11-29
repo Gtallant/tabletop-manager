@@ -1,8 +1,12 @@
+import Cookies from 'cookies';
 import fs from 'fs';
+import { IncomingMessage, ServerResponse } from 'http';
+import { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
+import { UserType, userTypecast } from '../components/login/constants';
 
 
-const base = require('airtable').base('app8ATwuKjfAqLgYg');
+const base = require('airtable').base(process.env.AIRTABLE_BASE_ID);
 
 export async function listAudioFiles() {
   const audioFiles: AudioFileMetadata[] = [];
@@ -36,4 +40,42 @@ export type AudioFileMetadata = {
   duration: string
   name: string
   artist: string
+}
+
+export const authRedirect = (req: IncomingMessage, res: ServerResponse, pageUrl: string ): any => {
+  const cookies = new Cookies(req, res);
+  const userTypeCookie: UserType = userTypecast(cookies.get('userType'));
+  if (userTypeCookie === 'DM' && pageUrl !== '/dm-portal') {
+    return {
+      isRedirect: true,
+      redirect: {
+        destination: '/dm-portal',
+        permanent: false,
+      },
+    }
+  }
+  if (userTypeCookie === 'PLAYER' && pageUrl !== '/player-portal') {
+    return {
+      isRedirect: true,
+      redirect: {
+        destination: '/player-portal',
+        permanent: false,
+      },
+    }
+  }
+  if (userTypeCookie === 'NONE' && pageUrl !== '/') {
+    return {
+      isRedirect: true,
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+  return {
+    isRedirect: false,
+    props: {
+      userTypeCookie,
+    }
+  }
 }

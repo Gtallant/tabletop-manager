@@ -2,28 +2,54 @@ import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
-import store from '../lib/store'
 import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import loginReducer from '../components/login/login.reducer';
+
+const store = configureStore({
+  reducer: {
+    login: loginReducer
+  }
+})
+
+type RootState = ReturnType<typeof store.getState>
+type AppDispatch = typeof store.dispatch
 
 const theme = createTheme({
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#231857',
+      main: '#7e57c2',
+      light: '#9778ce',
+      dark: '#583c87',
     },
     secondary: {
-      main: '#862f80',
+      main: '#1b5e20',
+      light: '#487e4c',
+      dark: '#124116',
     },
     error: {
       main: '#b71c1c',
+      light: '#',
+      dark: '#',
     },
     warning: {
       main: '#ffab00',
+      light: '#',
+      dark: '#',
     },
     info: {
       main: '#1565c0',
+      light: '#',
+      dark: '#',
     },
     success: {
       main: '#43a047',
+      light: '#',
+      dark: '#',
+    },
+    background: {
+      paper: '#2121214f',
     },
   },
   typography: {
@@ -85,5 +111,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}><Component {...pageProps} /></ThemeProvider>
     </Provider>);
 }
+
+export { store };
+export type { RootState, AppDispatch };
 
 export default MyApp

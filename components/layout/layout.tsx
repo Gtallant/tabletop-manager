@@ -9,7 +9,7 @@ export default function Layout({
 }) {
   return (
     <Container maxWidth="lg" sx={{ p: 10 }}>
-      <Paper elevation={24} sx={{ p: 4 }}>
+      <Paper elevation={8} sx={{ p: 4 }}>
       {children}
     </Paper>
     </Container>
