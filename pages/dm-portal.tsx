@@ -8,25 +8,25 @@ import Link from 'next/link';
 import { Button } from '@mui/material';
 import { Box } from '@mui/system';
 import { AudioFileMetadata, listAudioFiles } from '../lib/utils';
-import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
-import AudioPlayer from '../components/audioPlayer/audioPlayer';
+import Auth from '../components/Auth';
+import DmPortal from '../components/pages/dmPortal/DmPortal';
+import axios from 'axios';
 
 const DmPortalPage = ({ audioFiles } : { audioFiles: AudioFileMetadata[] }) => {
   const userType = useSelector((state: RootState) => state.login.userType);
-  if (userType !== 'DM') {
-    return (
-      <Layout>
-        <Box sx={{ textAlign: 'center' }} >
-          <Typography variant="h3" component="h1" sx={{ textAlign: 'center' }}>
-            Sorry, this content is for DMs only!
-          </Typography>
-          <Link href="/" passHref>
-            <Button sx={{ fontSize: '1.5em' }} component="a" type="text">Back to Home</Button>
-          </Link>
-        </Box>
-      </Layout>
-    );
-  }
+  const fallthroughContent = (
+    <Layout>
+      <Box sx={{ textAlign: 'center' }} >
+        <Typography variant="h3" component="h1" sx={{ textAlign: 'center' }}>
+          Sorry, this content is for DMs only!
+        </Typography>
+        <Link href="/" passHref>
+          <Button sx={{ fontSize: '1.5em' }} component="a" type="text">Back to Home</Button>
+        </Link>
+      </Box>
+    </Layout>
+  );
+  
   return (
     <>
       <Head>
@@ -35,6 +35,7 @@ const DmPortalPage = ({ audioFiles } : { audioFiles: AudioFileMetadata[] }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Auth authType="DM" authContent={(<DmPortal audioFiles={audioFiles} />)}  fallthroughContent={fallthroughContent} />
       
     </>
   )

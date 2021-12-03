@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import { Button } from '@mui/material';
 import { Box } from '@mui/system';
-import { AudioFileMetadata, listAudioFiles } from '../../../lib/utils';
+import { AudioFileMetadata } from '../../../pages/api/audio';
 import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
 import AudioPlayer from '../../audioPlayer/audioPlayer';
 

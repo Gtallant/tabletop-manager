@@ -6,9 +6,9 @@ import path from 'path';
 import { UserType, userTypecast } from '../components/login/constants';
 
 
-const base = require('airtable').base(process.env.AIRTABLE_BASE_ID);
-
+// Note only call this function during SSR, as process.env isn't defined on the client side
 export async function listAudioFiles() {
+  const base = require('airtable').base(process.env.AIRTABLE_BASE_ID);
   const audioFiles: AudioFileMetadata[] = [];
   const audioFilesTable = await base('Audio Files').select({
     view: "Grid view"

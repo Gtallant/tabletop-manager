@@ -1,17 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserType } from './constants';
+import { UserType, userTypecast } from './constants';
 import Cookies from 'js-cookie';
 
 const DM_PASSCODE = 'oota';
 
-type SliceState = { userType: UserType }
+type SliceState = { userType: UserType, initialized: boolean }
 
-const initialState: SliceState = { userType: 'NONE' };
+const initialState: SliceState = { userType: 'NONE', initialized: false };
 
 export const slice = createSlice({
   name: 'login',
   initialState,
   reducers: {
+    initLoginReducer: (state, action) => {
+      const userTypeCookie = Cookies.get('userType');
+      if (userTypeCookie !== state.userType) {
+        state.userType = userTypecast(userTypeCookie);
+      }
+      state.initialized = true;
+    },
     setUserType: (state, action) => {
       const userTypeCookie = Cookies.get('userType');
       if (userTypeCookie !== action.payload) {
@@ -22,6 +29,6 @@ export const slice = createSlice({
   },
 });
 
-export const { setUserType } = slice.actions;
+export const { initLoginReducer, setUserType } = slice.actions;
 
 export default slice.reducer;

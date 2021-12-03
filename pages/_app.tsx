@@ -5,6 +5,7 @@ import { createTheme } from '@mui/material/styles';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import loginReducer from '../components/login/login.reducer';
+import { useEffect } from 'react';
 
 const store = configureStore({
   reducer: {

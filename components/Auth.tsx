@@ -6,46 +6,38 @@ import Login from '../components/login/login';
 import { setUserType } from '../components/login/login.reducer';
 import { useSelector, useDispatch } from 'react-redux';
 ;import { RootState } from '../pages/_app';
-import { userConfig } from '../components/login/constants';
-import { useEffect } from 'react';
+import { userConfig, UserType, userTypecast } from '../components/login/constants';
+import { ReactChild, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { authRedirect } from '../lib/utils';
+import Cookies from 'js-cookie';
 
-const Auth = ({ userTypeCookie }: {
-  userTypeCookie: string
+const Auth = ({ authType, authContent, fallthroughContent }: {
+  authType: UserType,
+  authContent: ReactChild,
+  fallthroughContent: ReactChild,
 }
 ) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const userType = useSelector((state: RootState) => state.login.userType);
+  
   useEffect(() => {
+    const userTypeCookie = userTypecast(Cookies.get('userType'));
     if (userType !== userTypeCookie) {
       dispatch(setUserType(userTypeCookie));
     }
-  }, [userTypeCookie]);
+  }, []);
+
   if(userType === 'DM') {
     router.replace('/dm-portal');
   }
   const userTypeConfig = userConfig[userType];
   const { displayName, greeting } = userTypeConfig;
-  return (
-    <>
-      <Head>
-        <title>Tabletop Manager</title>
-        <meta name="description" content="Welcome to your favorite TTRPG portal" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Layout>
-        <Typography variant="h1" sx={{ textAlign: 'center' }}>
-          Welcome Adventurer!
-        </Typography>
-
-        {userType === 'NONE' && <Login />}
-
-      </Layout>
-    </>
-  )
+  if(userType === authType) {
+    return (<>{authContent}</>);
+  }
+  return (<>{fallthroughContent}</>);
 }
 
 export const getServerSideProps: GetServerSideProps<any> = async (context) => {

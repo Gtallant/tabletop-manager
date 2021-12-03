@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Typography from '@mui/material/Typography';
 import Layout from '../../layout/layout';
-import { AudioFileMetadata } from '../../../lib/utils';
+import { AudioFileMetadata } from '../../../pages/api/audio';
 import AudioPlayer from '../../audioPlayer/audioPlayer';
 
 const PlayerPortal = ({ audioFile } : { audioFile: AudioFileMetadata }) => {
